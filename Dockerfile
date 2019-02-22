@@ -17,7 +17,7 @@ ENV TEAMCITY_PROJECT_NAME=fake
 RUN dotnet test corewebapi.nunit/corewebapi.nunit.csproj
 
 # publish
-RUN dotnet publish corewebapi/corewebapi.csproj -o /publish
+RUN dotnet publish corewebapi/corewebapi.csproj -c Release -o /publish
 
 # Runtime Image Stage
 FROM microsoft/dotnet:2.2-aspnetcore-runtime 
