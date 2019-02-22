@@ -2,6 +2,7 @@
 **/obj/
 **/.git/
 **/.vs/
+**/.vscode/
 infra/
 **/global.json
 **/Dockerfile*
