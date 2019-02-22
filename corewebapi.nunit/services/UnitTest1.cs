@@ -22,7 +22,7 @@ namespace corewebapp.Tests.Services
              var result = _inventoryService.AddInventoryItem(item);
 
 
-            Assert.IsTrue(result.Id == 2, "Id of the item should be 3");
+            Assert.IsTrue(result.Id == 3, "Id of the item should be 3");
         }
 
         [Test]
