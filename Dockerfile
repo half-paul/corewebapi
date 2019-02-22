@@ -13,8 +13,10 @@ RUN dotnet restore corewebapi.nunit/corewebapi.nunit.csproj
 COPY . .
 
 # test
+##teamcity[testSuiteStarted name = 'tests'] 
 ENV TEAMCITY_PROJECT_NAME=fake
 RUN dotnet test corewebapi.nunit/corewebapi.nunit.csproj
+##teamcity[testSuiteFinished name = 'tests'] 
 
 # publish
 RUN dotnet publish corewebapi/corewebapi.csproj -c Release -o /publish
