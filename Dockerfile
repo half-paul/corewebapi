@@ -15,7 +15,7 @@ COPY . .
 # test
 ##teamcity[testSuiteStarted name = 'tests'] 
 ENV TEAMCITY_PROJECT_NAME=fake
-RUN dotnet test corewebapi.nunit/corewebapi.nunit.csproj
+RUN dotnet test corewebapi.xunit/corewebapi.xunit.csproj
 ##teamcity[testSuiteFinished name = 'tests'] 
 
 # publish
