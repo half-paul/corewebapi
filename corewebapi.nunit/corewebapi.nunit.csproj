@@ -7,13 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
     <PackageReference Include="nunit" Version="3.11.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.11.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <PackageReference Include="TeamCity.VSTest.TestAdapter" Version="1.0.14" />
   </ItemGroup>
 
    <ItemGroup>
     <ProjectReference Include="..\corewebapi\corewebapi.csproj" />
+    <ProjectReference Include="..\corewebapi.teamcitylogger\corewebapi.teamcitylogger.csproj" />  
   </ItemGroup>
 
 </Project>

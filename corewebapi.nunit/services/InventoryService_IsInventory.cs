@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using corewebapp.Services;
 using corewebapp.Models;
+using corewebapi.teamcitylogger;
 
 namespace corewebapp.Tests.Services
 {
