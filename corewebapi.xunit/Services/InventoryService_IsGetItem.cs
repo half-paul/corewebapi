@@ -2,6 +2,7 @@ using System;
 using Xunit;
 using corewebapp.Services;
 using corewebapp.Models;
+using System.Collections.Generic;
 
 namespace corewebapi.xunit.Services
 {
@@ -27,16 +28,36 @@ namespace corewebapi.xunit.Services
         }
 
 
-        [Fact]
-         public void GetItemsFromList()
+        [Theory]
+         [MemberData("IsSaturdayIndex", MemberType = typeof(TestCase))]
+         public void GetItemsFromList(InventoryItem item)
         {
-            InventoryItem item = new InventoryItem() {Id=4, ItemName="Item 2", Price=330.2};
-
+          
              var i = _inventoryService.AddInventoryItem(item);
 
              var result = _inventoryService.GetInventoryItems();
 
             Assert.True(result.Count == 1, "The list should contain 1 item");
+            Assert.Equal(item.Id, result[item.ItemName].Id);
+        }
+
+       
+    }
+
+    public class TestCase
+    {
+        public static readonly List<object[]> IsSaturdayTestCase = new List<object[]>
+        {
+            new object[]{new InventoryItem() {Id=4, ItemName="Item 2", Price=330.2}},
+            new object[]{new InventoryItem() {Id=5, ItemName="Item 3", Price=3230.2}}
+        };
+
+        public static IEnumerable<object[]> IsSaturdayIndex
+        {
+            get
+            {
+                return IsSaturdayTestCase;
+            }
         }
     }
 }
